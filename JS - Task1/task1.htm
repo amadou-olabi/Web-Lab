@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task 1</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<br><br>
+	<div>
+		<fieldset>
+			<legend>Input Data</legend>
+			<caption> Rows</caption>
+			<input type="text" name="rows" id="rows"><br>
+			<caption> Cols</caption>
+			<input type="text" name="cols" id="cols"><br>
+			<caption> Text</caption>
+			<input type="text" name="text" id="text"><br>
+			<button onclick="ModifyData()">Modify</button>
+		</fieldset>
+	</div>
+	<br><br>
+	<hr>
+	<br><br>
+	<div>
+		<table>
+			<tr>
+				<th colspan="3">Data Results</th>
+			</tr>
+			<tr>
+				<td id="1">11</td>
+				<td id="2">12</td>
+				<td id="3">13</td>
+			</tr>
+			<tr>
+				<td id="1">21</td>
+				<td id="2">22</td>
+				<td id="3">23</td>
+			</tr>
+			<tr>
+				<td id="1">31</td>
+				<td id="2">32</td>
+				<td id="3">33</td>
+			</tr>
+			<tr>
+				<td id="1">41</td>
+				<td id="2">42</td>
+				<td id="3">43</td>
+			</tr>
+			<tr>
+				<td id="1">51</td>
+				<td id="2">52</td>
+				<td id="3">53</td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+			function ModifyData() {
+				// body...
+				var x = document.getElementById('rows');
+				var y = document.getElementById('cols');
+				var z = document.getElementById('text');
+				var rows = x.value;
+				var cols = y.value;
+				var text = z.value;
+				
+				// console.log(rows);
+				// console.log(cols);
+				// console.log(text);
+
+				var table = document.querySelectorAll('tr');
+
+				// console.log(table);
+
+				if (rows>=1 && cols>=1 && rows<=5 && cols<=5) {
+					// console.log(table[rows]);
+
+					var modif = table[rows].querySelectorAll('td');
+					// modif[cols-1].innerText = text;
+					modif[cols-1].innerHTML = text;
+				}
+				else{
+					alert("Error-- Out of Range");
+				}
+			}
+		</script>
+	</div>
+</body>
+</html>
